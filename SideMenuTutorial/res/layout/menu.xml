@@ -1,0 +1,89 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/back_a"
+    tools:context=".MainActivity" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+	    <RelativeLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="15dp"
+	        android:layout_marginRight="15dp" >
+	
+	        <TextView
+	            android:id="@+id/sopa"
+	            android:layout_width="match_parent"
+	            android:layout_height="150dp"
+	            android:layout_alignParentLeft="true"
+	            android:layout_alignParentTop="true"
+	    		android:layout_marginBottom="40dp"
+	    		android:layout_marginTop="40dp"
+	            android:background="@color/medium_grey"
+	            android:gravity="center_horizontal|center_vertical"
+	            android:textAppearance="?android:attr/textAppearanceLarge"
+	            android:textSize="20sp" />
+	
+	        <TextView
+	            android:background="@color/medium_grey"
+	            android:id="@+id/sopa_dieta"
+	            android:layout_width="match_parent"
+	            android:layout_height="80dp"
+	            android:layout_alignParentLeft="true"
+	            android:layout_below="@+id/sopa"
+	    		android:layout_marginBottom="40dp"
+	    		android:layout_marginTop="40dp"
+	            android:textAppearance="?android:attr/textAppearanceLarge"
+	            android:textSize="20sp" />
+	
+	        <TextView
+	            android:id="@+id/carne"
+	            android:layout_width="match_parent"
+	            android:layout_height="80dp"
+	            android:layout_alignParentLeft="true"
+	            android:layout_alignRight="@+id/peixe"
+	            android:layout_below="@+id/sopa_dieta"
+	            android:layout_marginTop="30dp"
+	            android:gravity="center_horizontal|center_vertical"
+	            android:background="@color/medium_red"
+	            android:textAppearance="?android:attr/textAppearanceLarge"
+	            android:textSize="20sp" />
+	
+	        <TextView
+	            android:background="@color/medium_blue"
+	            android:id="@+id/peixe"
+	            android:layout_width="match_parent"
+	            android:layout_height="80dp"
+	            android:layout_alignParentLeft="true"
+	            android:layout_below="@+id/carne"
+	            android:layout_marginTop="30dp"
+	            android:layout_marginRight="5dp"
+	            android:gravity="center_horizontal|center_vertical"
+	            android:textAppearance="?android:attr/textAppearanceLarge"
+	            android:textSize="20sp" />
+	
+	
+	        <TextView
+	            android:id="@+id/vegetariano"
+	            android:layout_width="match_parent"
+	            android:layout_height="80dp"
+	            android:layout_alignParentLeft="true"
+	            android:layout_alignRight="@+id/peixe"
+	            android:layout_below="@+id/peixe"
+	            android:layout_marginTop="30dp"
+	            android:gravity="center_horizontal|center_vertical"
+	            android:background="@color/medium_green"
+	            android:textAppearance="?android:attr/textAppearanceLarge"
+	            android:textSize="20sp" />
+	
+	    </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>
