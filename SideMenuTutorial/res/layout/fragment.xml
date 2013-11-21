@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/back_a"
+    android:background="@drawable/back_a" 
     tools:context=".MainActivity" >
 
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="match_parent">
 
 	    <RelativeLayout
 	        android:layout_width="match_parent"
@@ -22,7 +22,6 @@
 		        android:id="@+id/relative_1"
 		        android:layout_width="match_parent"
 		        android:layout_height="match_parent"
-	            android:layout_marginBottom="10dp"
 		        android:layout_alignParentLeft="true"
 		        android:layout_alignParentRight="true" >
 		        
@@ -291,7 +290,6 @@
 	            android:layout_height="70dp"
 	            android:layout_marginTop="20dp"
 	            android:layout_below="@+id/others_txt"
-	            android:layout_alignParentBottom="true"
 	            android:layout_centerHorizontal="true"
 	            android:background="@drawable/center_clicked"
 	            android:gravity="center_horizontal|center_vertical"
@@ -299,8 +297,16 @@
 	            android:clickable="true"
 	            android:textSize="20sp" 
 	            android:onClick="desertClicked"
-        		android:layout_marginBottom="100dp"/>
+        		android:layout_marginBottom="20dp"/>
 	
+		   <View
+		        android:id="@+id/sep_3"
+		        android:background="@color/emenu_color"
+		        android:layout_width="fill_parent"
+		        android:layout_height="1dp"
+		        android:layout_marginTop="20dp"
+	         	android:layout_below="@+id/deserts_txt" />
+		        
 	    </RelativeLayout>
     </ScrollView>
 

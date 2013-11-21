@@ -1,0 +1,307 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/back_a"
+    tools:context=".MainActivity" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+	    <RelativeLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_marginLeft="25dp"
+	        android:layout_marginRight="25dp" >
+	
+		    <RelativeLayout
+		        android:id="@+id/relative_1"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent"
+        		android:layout_marginBottom="100dp"
+		        android:layout_alignParentLeft="true"
+		        android:layout_alignParentRight="true" >
+		        
+		   <TextView
+		            android:id="@+id/info_ttl"
+		            android:text="@string/info_ttl"
+		            android:textColor="@color/emenu_color"
+		            android:layout_width="match_parent"
+		            android:layout_height="match_parent"
+	            	android:layout_marginTop="15dp"
+		            android:textAppearance="?android:attr/textAppearanceLarge"
+	            	android:gravity="center_horizontal|center_vertical"
+		            android:textSize="28sp" />
+		        
+		   <TextView
+		            android:id="@+id/resumee_ttl"
+		            android:text="@string/resumee_ttl"
+		            android:textStyle="bold"
+		            android:textColor="@android:color/darker_gray" 
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+	            	android:layout_marginTop="20dp"
+		            android:layout_alignParentLeft="true"
+	            	android:layout_below="@+id/info_ttl"
+		            android:textAppearance="?android:attr/textAppearanceLarge"
+		            android:textSize="18sp" />
+		        
+		   <TextView
+		            android:id="@+id/resumee_txt"
+		            android:text="@string/resumee_txt"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+	            	android:layout_below="@+id/resumee_ttl"
+		            android:layout_marginLeft="50dp"
+		            android:textAppearance="?android:attr/textAppearanceLarge"
+		            android:textSize="18sp" />
+		        
+		   <TextView
+		            android:id="@+id/website_ttl"
+		            android:text="@string/website_ttl"
+		            android:textStyle="bold"
+		            android:textColor="@android:color/darker_gray" 
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+	            	android:layout_marginTop="20dp"
+		            android:layout_alignParentLeft="true"
+	            	android:layout_below="@+id/resumee_txt"
+		            android:textAppearance="?android:attr/textAppearanceLarge"
+		            android:clickable="true"
+		            android:textSize="18sp" />
+		        
+		   <TextView
+		            android:id="@+id/website_txt"
+		            android:text="@string/website_txt"
+	            	android:textColor="@color/brown"
+	            	android:background="@drawable/center_clicked"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+	            	android:layout_below="@+id/website_ttl"
+		            android:layout_marginLeft="50dp"
+		            android:textAppearance="?android:attr/textAppearanceLarge"
+		            android:clickable="true"
+	           	 	android:onClick="websiteClicked"
+		            android:textSize="18sp" />
+		        
+		   <TextView
+		            android:id="@+id/location_ttl"
+		            android:text="@string/location_ttl"
+		            android:textStyle="bold"
+		            android:textColor="@android:color/darker_gray" 
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+	            	android:layout_marginTop="20dp"
+		            android:layout_alignParentLeft="true"
+	            	android:layout_below="@+id/website_txt"
+		            android:textAppearance="?android:attr/textAppearanceLarge"
+		            android:clickable="true"
+		            android:textSize="18sp" />
+		        
+		   <TextView
+		            android:id="@+id/location_txt"
+		            android:text="@string/location_txt"
+	            	android:textColor="@color/brown"
+	            	android:background="@drawable/center_clicked"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+	            	android:layout_below="@+id/location_ttl"
+		            android:layout_marginLeft="50dp"
+		            android:textAppearance="?android:attr/textAppearanceLarge"
+		            android:clickable="true"
+	           	 	android:onClick="locationClicked"
+		            android:textSize="18sp" />
+		        
+		   <TextView
+		            android:id="@+id/contacts_ttl"
+		            android:text="@string/contacts_ttl"
+		            android:textStyle="bold"
+		            android:textColor="@android:color/darker_gray" 
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+	            	android:layout_marginTop="20dp"
+		            android:layout_alignParentLeft="true"
+	            	android:layout_below="@+id/location_txt"
+		            android:textAppearance="?android:attr/textAppearanceLarge"
+		            android:clickable="true"
+		            android:textSize="18sp" />
+		        
+		   <TextView
+		            android:id="@+id/email_txt"
+		            android:text="@string/email_txt"
+	            	android:textColor="@color/brown"
+	            	android:background="@drawable/center_clicked"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+	            	android:layout_below="@+id/contacts_ttl"
+		            android:layout_marginLeft="50dp"
+		            android:textAppearance="?android:attr/textAppearanceLarge"
+		            android:clickable="true"
+	           	 	android:onClick="emailClicked"
+		            android:textSize="18sp" />
+
+			   <TextView
+			       android:id="@+id/phone_txt"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:layout_alignParentBottom="true"
+			       android:layout_alignParentRight="true"
+			       android:background="@drawable/center_clicked"
+			       android:clickable="true"
+			       android:onClick="phoneClicked"
+			       android:text="@string/phone_txt"
+			       android:textAppearance="?android:attr/textAppearanceLarge"
+			       android:textColor="@color/brown"
+			       android:textSize="18sp" />
+		
+		    </RelativeLayout>
+	    
+		        <View
+		            android:id="@+id/sep_1"
+		            android:background="@color/emenu_color"
+		            android:layout_width="fill_parent"
+		            android:layout_height="1dp"
+		            android:layout_marginTop="10dp"
+	            	android:layout_below="@+id/relative_1" />
+		        
+		        <View
+		            android:id="@+id/sep_2"
+		            android:background="@color/emenu_color"
+		            android:layout_width="fill_parent"
+		            android:layout_height="1dp"
+		            android:layout_marginBottom="10dp"
+		            android:layout_marginTop="2dp"
+	            	android:layout_below="@+id/sep_1"/>
+		        
+		   <TextView
+		            android:id="@+id/carte_ttl"
+		            android:text="@string/carte_ttl"
+		            android:textColor="@color/emenu_color"
+		            android:layout_width="match_parent"
+		            android:layout_height="match_parent"
+	            	android:layout_marginTop="10dp"
+		            android:textAppearance="?android:attr/textAppearanceLarge"
+	            	android:gravity="center_horizontal|center_vertical"
+	            	android:layout_below="@+id/sep_2"
+		            android:textSize="28sp" />
+		        
+	        <TextView
+	            android:id="@+id/menu_txt"
+	            android:text="@string/menu_txt"
+	            android:textColor="@color/brown"
+	            android:layout_width="125dp"
+	            android:layout_height="70dp"
+	            android:layout_marginTop="20dp"
+	            android:layout_below="@+id/carte_ttl"
+	            android:background="@drawable/left_clicked"
+	            android:gravity="center_horizontal|center_vertical"
+	            android:textAppearance="?android:attr/textAppearanceLarge"
+		        android:clickable="true"
+	            android:onClick="menuClicked"
+	            android:textSize="20sp" />
+
+	        <TextView
+	            android:id="@+id/drinks_txt"
+	            android:text="@string/drinks_txt"
+	            android:textColor="@color/brown"
+	            android:layout_width="125dp"
+	            android:layout_height="70dp"
+	            android:layout_marginTop="20dp"
+	            android:layout_alignBottom="@+id/menu_txt"
+	            android:layout_alignParentRight="true"
+	            android:background="@drawable/right_clicked"
+	            android:gravity="center_horizontal|center_vertical"
+	            android:textAppearance="?android:attr/textAppearanceLarge"
+	            android:clickable="true"
+	            android:onClick="drinksClicked"
+	            android:textSize="20sp" />
+
+	        <TextView
+	            android:id="@+id/entry_txt"
+	            android:text="@string/entry_txt"
+	            android:textColor="@color/brown"
+	            android:layout_width="125dp"
+	            android:layout_height="70dp"
+	            android:layout_marginTop="20dp"
+	            android:layout_alignParentLeft="true"
+	            android:layout_below="@+id/menu_txt"
+	            android:background="@drawable/left_clicked"
+	            android:gravity="center_horizontal|center_vertical"
+	            android:textAppearance="?android:attr/textAppearanceLarge"
+	            android:clickable="true"
+	            android:onClick="entryClicked"
+	            android:textSize="20sp" />
+	
+	        <TextView
+	            android:id="@+id/meat_txt"
+	            android:text="@string/meat_txt"
+	            android:textColor="@color/brown"
+	            android:layout_width="125dp"
+	            android:layout_height="70dp"
+	            android:layout_marginTop="20dp"
+	            android:layout_alignBottom="@+id/entry_txt"
+	            android:layout_alignParentRight="true"
+	            android:background="@drawable/right_clicked"
+	            android:gravity="center_horizontal|center_vertical"
+	            android:textAppearance="?android:attr/textAppearanceLarge"
+	            android:clickable="true"
+	            android:onClick="meatClicked"
+	            android:textSize="20sp" />
+	
+	        <TextView
+	            android:id="@+id/fish_txt"
+	            android:text="@string/fish_txt"
+	            android:textColor="@color/brown"
+	            android:layout_width="125dp"
+	            android:layout_height="70dp"
+	            android:layout_below="@+id/meat_txt"
+	            android:layout_marginTop="20dp"
+	            android:background="@drawable/left_clicked"
+	            android:gravity="center_horizontal|center_vertical"
+	            android:textAppearance="?android:attr/textAppearanceLarge"
+	            android:clickable="true"
+	            android:onClick="fishClicked"
+	            android:textSize="20sp" />
+
+	        <TextView
+	            android:id="@+id/others_txt"
+	            android:text="@string/others_txt"
+	            android:textColor="@color/brown"
+	            android:layout_width="125dp"
+	            android:layout_height="70dp"
+	            android:layout_marginTop="20dp"
+	            android:layout_alignBottom="@+id/fish_txt"
+	            android:layout_alignParentRight="true"
+	            android:background="@drawable/right_clicked"
+	            android:gravity="center_horizontal|center_vertical"
+	            android:textAppearance="?android:attr/textAppearanceLarge"
+	            android:clickable="true"
+	            android:onClick="othersClicked"
+	            android:textSize="20sp" />
+
+	        <TextView
+	            android:id="@+id/deserts_txt"
+	            android:text="@string/deserts_txt"
+	            android:textColor="@color/brown"
+	            android:layout_width="125dp"
+	            android:layout_height="70dp"
+	            android:layout_marginTop="20dp"
+	            android:layout_below="@+id/others_txt"
+	            android:layout_alignParentBottom="true"
+	            android:layout_centerHorizontal="true"
+	            android:background="@drawable/center_clicked"
+	            android:gravity="center_horizontal|center_vertical"
+	            android:textAppearance="?android:attr/textAppearanceLarge"
+	            android:clickable="true"
+	            android:textSize="20sp" 
+	            android:onClick="desertClicked"
+        		android:layout_marginBottom="100dp"/>
+	
+	    </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>

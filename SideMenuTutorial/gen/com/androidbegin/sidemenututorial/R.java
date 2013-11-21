@@ -1010,11 +1010,11 @@ containing a value of this type.
         public static final int abs__textButton=0x7f040013;
         public static final int abs__title=0x7f04001b;
         public static final int abs__up=0x7f04000b;
-        public static final int action_settings=0x7f04005b;
+        public static final int action_settings=0x7f04005c;
         public static final int bogus_price=0x7f040039;
         public static final int bogus_ttl=0x7f040036;
         public static final int bogus_txt=0x7f040038;
-        public static final int carne=0x7f040057;
+        public static final int carne=0x7f040058;
         public static final int carte_ttl=0x7f04004d;
         public static final int contacts_ttl=0x7f040048;
         public static final int content_frame=0x7f04003e;
@@ -1025,8 +1025,8 @@ containing a value of this type.
         public static final int drawer_layout=0x7f04003d;
         public static final int drinks_txt=0x7f04004f;
         public static final int edit_query=0x7f040026;
-        public static final int email0=0x7f04005c;
-        public static final int email1=0x7f04005d;
+        public static final int email0=0x7f04005d;
+        public static final int email1=0x7f04005e;
         public static final int email_txt=0x7f040049;
         public static final int entry_txt=0x7f040050;
         public static final int fish_txt=0x7f040052;
@@ -1037,13 +1037,13 @@ containing a value of this type.
         public static final int listview_drawer=0x7f04003f;
         public static final int location_ttl=0x7f040046;
         public static final int location_txt=0x7f040047;
-        public static final int login=0x7f040055;
+        public static final int login=0x7f040056;
         public static final int meat_txt=0x7f040051;
-        public static final int menu_settings=0x7f04005a;
+        public static final int menu_settings=0x7f04005b;
         public static final int menu_txt=0x7f04004e;
         public static final int normal=0x7f040001;
         public static final int others_txt=0x7f040053;
-        public static final int peixe=0x7f040058;
+        public static final int peixe=0x7f040059;
         public static final int phone_txt=0x7f04004a;
         public static final int relative_1=0x7f040040;
         public static final int resumee_ttl=0x7f040042;
@@ -1051,18 +1051,19 @@ containing a value of this type.
         public static final int scrollView1=0x7f040034;
         public static final int sep_1=0x7f04004b;
         public static final int sep_2=0x7f04004c;
+        public static final int sep_3=0x7f040055;
         public static final int showCustom=0x7f040008;
         public static final int showHome=0x7f040005;
         public static final int showTitle=0x7f040007;
         public static final int sopa=0x7f040033;
-        public static final int sopa_dieta=0x7f040056;
+        public static final int sopa_dieta=0x7f040057;
         public static final int subtitle=0x7f04003c;
         public static final int tabMode=0x7f040003;
-        public static final int tele0=0x7f04005e;
-        public static final int tele1=0x7f04005f;
+        public static final int tele0=0x7f04005f;
+        public static final int tele1=0x7f040060;
         public static final int title=0x7f04003b;
         public static final int useLogo=0x7f040004;
-        public static final int vegetariano=0x7f040059;
+        public static final int vegetariano=0x7f04005a;
         public static final int website_ttl=0x7f040044;
         public static final int website_txt=0x7f040045;
         public static final int wrap_content=0x7f040000;
@@ -2328,7 +2329,7 @@ containing a value of this type.
          */
         public static final int[] SherlockSpinner = {
             0x010100af, 0x01010175, 0x01010176, 0x0101017b,
-            0x01010262, 0x010102ac, 0x010102ad, 0x010103fd
+            0x01010262, 0x010102ac, 0x010102ad, 0x0101043a
         };
         /**
           <p>
