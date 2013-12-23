@@ -38,7 +38,12 @@ public class FragmentView extends SherlockFragment{
 	    {
             p = (Users) it.next();
         }
-        	
+        
+        Common.email0 = p.getEmails()[0];
+        Common.email1 = p.getEmails()[1];
+        Common.phone0 = p.getPhones()[0];
+        Common.phone1 = p.getPhones()[1];
+        
 	    if(p.getRestaurant().length() != 0)
 	       	title_tv.setText("    " + p.getRestaurant() + "    ");
         if(p.getResumee().length() != 0)

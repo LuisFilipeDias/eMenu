@@ -18,8 +18,11 @@ public class Common{
 	public static int totalPlt = 7;
 	public static int totalRst = 0;
 	public static String currWebsite = "a";
-	public static String currLocation = "a";;
+	public static String currLocation = "a";
 	public static boolean infoLoaded = false;
-
+	public static String email0 = "-";
+	public static String email1 = "-";
+	public static String phone0 = "-";
+	public static String phone1 = "-";
 	
 }

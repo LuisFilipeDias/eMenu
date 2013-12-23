@@ -29,9 +29,9 @@ public class MainActivity extends SherlockFragmentActivity {
 	ListView mDrawerList;
 	ActionBarDrawerToggle mDrawerToggle;
 	MenuListAdapter mMenuAdapter;
-	String[] title = new String[Common.totalRst];
-	String[] subtitle = new String[Common.totalRst];
-	int[] icon = new int[Common.totalRst];
+	String[] title = new String[Common.totalRst + 2];
+	String[] subtitle = new String[Common.totalRst + 2];
+	int[] icon = new int[Common.totalRst + 2];
 	FragmentView fragAct = new FragmentView();
 	FragmentView fragBack = new FragmentView();
 	private CharSequence mDrawerTitle;
@@ -111,12 +111,19 @@ public class MainActivity extends SherlockFragmentActivity {
             
          // Generate title
     		title[i] = p.getRestaurant();
-    		subtitle[i] = p.getUsername();
+    		subtitle[i] = p.getCity();
 
     		// Generate icon
-    		icon[i] = R.drawable.action_about;
+    		icon[i] = R.drawable.food;
     		i++;
         }
+		
+		title[i] = "VOLTAR"; 
+		subtitle[i] = "Menu Anterior";
+		icon[i] = R.drawable.undo;
+		title[i+1] = "SAIR";
+		subtitle[i+1] = "Fechar Aplicação";
+		icon[i+1] = R.drawable.remove;
 		
 	}
 
@@ -141,7 +148,20 @@ public class MainActivity extends SherlockFragmentActivity {
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position, long id) 
 		{
-			selectItem(position);
+			if( position < Common.totalRst )
+				selectItem(position);
+			else if (position == Common.totalRst)
+			{
+				Intent intent = new Intent(MainActivity.this, Menu.class);
+				startActivity(intent);  
+			}
+			else
+			{
+				Intent intent = new Intent(Intent.ACTION_MAIN);
+				intent.addCategory(Intent.CATEGORY_HOME);
+				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				startActivity(intent);
+			}
 		}
 	}
 
@@ -153,7 +173,7 @@ public class MainActivity extends SherlockFragmentActivity {
 		
 		ft.replace(R.id.content_frame, fragBack);
 		ft.commit();
-
+ 
 		fragAux = fragBack;
 		fragBack = fragAct;
 		fragAct = fragAux;
@@ -188,36 +208,59 @@ public class MainActivity extends SherlockFragmentActivity {
 
 
 	public void websiteClicked(View v){	
-		createDialog(this, "Website", "Deseja abrir o site do restaurante?", 0);
+		createDialog(this, "Website", "Deseja abrir o site do restaurante?", 0, "");
 	}
 	public void locationClicked(View v){	
-		createDialog(this, "Localização", "Deseja abrir a localização?", 1);
-	}
-	
-	public void phoneClicked(View v){
-		popupHandler("Contacts clicked", R.menu.popup_tele, v);
-		
+		createDialog(this, "Localização", "Deseja abrir a localização?", 1, "");
 	}
 	
 	public void emailClicked(View v){
-		popupHandler("Emails clicked", R.menu.popup_email, v);
-		
+		popupHandler("Emails clicked", R.menu.popup_email, v, 0);
+	}
+	
+	public void phoneClicked(View v){
+		popupHandler("Contacts clicked", R.menu.popup_tele, v, 1);
 	}
 
 	@SuppressLint("NewApi")
-	public void popupHandler(final String message, int placement, View v)
+	public void popupHandler(final String message, int placement, View v, final int identifier)
 	{
-		PopupMenu popup = new PopupMenu(this, v);
+		final PopupMenu popup = new PopupMenu(this, v);
 		popup.getMenuInflater().inflate(placement, popup.getMenu());
-		 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+		if( identifier == 0 )
+		{
+			if(Common.email0.length() > 1)
+				popup.getMenu().getItem(0).setTitle(Common.email0);
+			else
+				popup.getMenu().getItem(0).setTitle("-");
+			if(Common.email1.length() > 1)
+				popup.getMenu().getItem(1).setTitle(Common.email1);
+			else
+				popup.getMenu().getItem(1).setTitle("-");
+		}
+		else
+		{
+			if(Common.phone0.length() > 1)
+				popup.getMenu().getItem(0).setTitle(Common.phone0);
+			else
+				popup.getMenu().getItem(0).setTitle("-");
+			if(Common.phone1.length() > 1)
+				popup.getMenu().getItem(1).setTitle(Common.phone1);
+			else
+				popup.getMenu().getItem(1).setTitle("-");
+		}
+		popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
 	           @Override
 				public boolean onMenuItemClick(android.view.MenuItem item) {
-					// TODO Auto-generated method stub
-	                System.out.println(message);
+	        	    String contact = item.getTitle().toString();
+		       		if( identifier == 0 && contact.length() > 2)
+		       			createDialog(MainActivity.this, "Email", "Deseja enviar um e-mail?", 2, contact);
+		    		else if(identifier == 1 && contact.length() > 2)
+		    			createDialog(MainActivity.this, "Telefone", "Deseja telefonar?", 3, contact);
 					return false;
 				}
 	        });
-		 popup.show();
+		popup.show();
 	}
 	
 	public void menuClicked(View v){
@@ -262,20 +305,22 @@ public class MainActivity extends SherlockFragmentActivity {
     	startActivity(intent);  	
 	}
 	
-	public void createDialog(final Activity context, String title, final String content, final int sel)
+	public void createDialog(final Activity context, String title, final String content, final int sel, final String optional)
  	{
  		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
       	alertDialogBuilder.setTitle(title);
       	
 		alertDialogBuilder
 			.setMessage(content)
-			.setCancelable(false)
-			.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+			.setCancelable(true)
+			.setNegativeButton("OK", new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog,int id) {
 			      	Intent intent = null;
 					if( sel == 0)
 					{
-						String url = "http:// " + Common.currWebsite;
+						String url = "http://" + Common.currWebsite;
+						//String url = Common.currWebsite;
+						//System.out.println(url2);
 						System.out.println(url);
 				        intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 				        startActivity(intent);
@@ -285,12 +330,24 @@ public class MainActivity extends SherlockFragmentActivity {
 						String loc_map = "geo:0,0?q=" + Common.currLocation;
 				        intent = new Intent(Intent.ACTION_VIEW, Uri.parse(loc_map));
 				        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				        startActivity(intent);
 					}
-			        startActivity(intent);
+					else if( sel == 2 )
+					{
+						intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+					            "mailto",optional, null));
+						startActivity(Intent.createChooser(intent, "Enviar email..."));
+					}
+					else if( sel == 3 )
+					{
+						intent = new Intent(Intent.ACTION_DIAL);          
+						intent.setData(Uri.parse("tel:" + optional));       
+				        startActivity(intent);
+					}
 					dialog.dismiss();
 				}
 	  		})
-			.setNegativeButton("Cancel",new DialogInterface.OnClickListener() {
+			.setPositiveButton("Cancel",new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog,int id) {
 					dialog.dismiss();
 				}
@@ -299,6 +356,4 @@ public class MainActivity extends SherlockFragmentActivity {
 		AlertDialog alertDialog = alertDialogBuilder.create();
 		alertDialog.show();
  	}
-	
 }
-

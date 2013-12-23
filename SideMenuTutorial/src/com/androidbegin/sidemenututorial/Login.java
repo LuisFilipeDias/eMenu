@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 public class Login extends Activity
 {
+	boolean finished = false;
+	boolean success = false;
 	ProgressDialog progDialog;
 	String data = "";
 	@Override
@@ -28,8 +30,11 @@ public class Login extends Activity
 		
 	    new Thread() {
 	        public void run() {
+            	success = false;
+            	finished = false;
 	            try 
 	            {
+	                sleep(100);
 	                data = getdb.getDataFromDB();
 	                //System.out.println(data);
 	                sleep(100);
@@ -46,13 +51,20 @@ public class Login extends Activity
 	            }
 	            if(Common.infoLoaded)
 	            {
+		            finished = true;
+	            	success = true;
 	            	Intent intent = new Intent(Login.this, Menu.class);
 	            	startActivity(intent);  
 	            }
 	            progDialog.dismiss();
+	            finished = true;
 	        }
 	    }.start();
-	    Toast.makeText(Login.this, "Check-in falhou. \nVerifique ligação à rede", Toast.LENGTH_LONG).show();
+	    while( !finished );
+	    if ( !success )
+	    	Toast.makeText(Login.this, "Check-in falhou. \nVerifique ligação à rede", Toast.LENGTH_LONG).show();
+	    else
+	    	Toast.makeText(Login.this, "Success!", Toast.LENGTH_LONG).show();
 	}
 	
 }

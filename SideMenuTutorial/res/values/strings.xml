@@ -5,8 +5,9 @@
     <string name="drawer_close">drawer_close</string>
     <string name="drawer_open">drawer_open</string>
     <string name="title_activity_fetch_database">title_activity_fetch_database</string>
-    <string name="title_activity_main">Restaurantes</string>
-    <string name="title_activity_menu">Opções</string>
+    <string name="title_activity_main">Escolher Restaurante</string>
+    <string name="title_activity_display">Escolher Opção</string>
+    <string name="title_activity_menu">Restaurantes</string>
     <string name="title_display_activity">Escolher</string>
     <string name="action_settings">action_settings</string>
     <string name="Fragment1">Fragment1</string>
@@ -38,8 +39,10 @@
     <string name="phone_txt">- Telefones -</string>
     <string name="email_txt">- Emails -</string>
     
-    <string name="bogus_ttl">Sem Informações</string>
-    <string name="bogus_txt">Sem Informações</string>
-    <string name="bogus_price">Vh</string>
+    <string name="bogus_ttl">Opção</string>
+    <string name="bogus_txt"> - Não disponível...\n\n</string>
+    <string name="bogus_price"> </string>
     
+    <string name="left_btn_txt">Left</string>
+    <string name="right_btn_txt">Right</string>
 </resources>

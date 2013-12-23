@@ -1,5 +1,6 @@
 package com.androidbegin.sidemenututorial;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -20,9 +21,9 @@ public class DisplayActivity extends SherlockFragmentActivity {
 	ListView mDrawerList;
 	ActionBarDrawerToggle mDrawerToggle;
 	MenuListAdapter mMenuAdapter;
-	String[] title = {"Menu", "Bebidas", "Entradas", "Pratos de Carne", "Pratos de Peixe", "Outros Pratos", "Sobremesas"};
-	String[] subtitle = {"Menu", "Bebidas", "Entradas", "Pratos de Carne", "Pratos de Peixe", "Outros Pratos", "Sobremesas"};
-	int[] icon = new int[Common.totalPlt];
+	String[] title = {"Menu", "Bebidas", "Entradas", "Pratos de Carne", "Pratos de Peixe", "Outros Pratos", "Sobremesas", "VOLTAR", "SAIR"};
+	String[] subtitle = {"Menu", "Bebidas", "Entradas", "Pratos de Carne", "Pratos de Peixe", "Outros Pratos", "Sobremesas", "Menu Anterior", "Fechar Aplicação"};
+	int[] icon = new int[Common.totalPlt + 2];
 	DisplayFragment fragAct = new DisplayFragment();
 	DisplayFragment fragBack = new DisplayFragment();
 	private CharSequence mDrawerTitle;
@@ -32,7 +33,6 @@ public class DisplayActivity extends SherlockFragmentActivity {
 		super.onCreate(savedInstanceState);
 		// Get the view from drawer_main.xml
 		setContentView(R.layout.drawer_main);
-		System.out.println("Annyong");
 		// Get the Title
 		mDrawerTitle = getTitle();
 		
@@ -86,7 +86,16 @@ public class DisplayActivity extends SherlockFragmentActivity {
 		if (savedInstanceState == null) {
 			selectItem(Common.activPlt);
 		}
-		
+
+		icon[0] = R.drawable.menu;
+		icon[1] = R.drawable.drink;
+		icon[2] = R.drawable.entry;  
+		icon[3] = R.drawable.meat; 
+		icon[4] = R.drawable.fish;
+		icon[5] = R.drawable.other;
+		icon[6] = R.drawable.desert;
+		icon[7] = R.drawable.undo;
+		icon[8] = R.drawable.remove;
 	}
 
 	
@@ -111,7 +120,20 @@ public class DisplayActivity extends SherlockFragmentActivity {
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position, long id) 
 		{
-			selectItem(position);
+			if( position < 7)
+				selectItem(position);
+			else if( position == 7 )
+			{
+				Intent intent = new Intent(DisplayActivity.this, MainActivity.class);
+				startActivity(intent);  
+			}
+			else
+			{
+				Intent intent = new Intent(Intent.ACTION_MAIN);
+				intent.addCategory(Intent.CATEGORY_HOME);
+				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				startActivity(intent);
+			}
 		}
 	}
 
@@ -135,7 +157,6 @@ public class DisplayActivity extends SherlockFragmentActivity {
 		// Close drawer
 		
 		mDrawerLayout.closeDrawer(mDrawerList);
-		System.out.println("Last one last?");
 	}
 
 	@Override
@@ -156,6 +177,33 @@ public class DisplayActivity extends SherlockFragmentActivity {
 	public void setTitle(CharSequence title) {
 	} 
 	
-	
+	public void rightClicked(View v){
+		int selectedPos = 0;
+		if( Common.activPlt < 6 )
+		{
+			selectedPos = Common.activPlt + 1;
+			Common.activPlt = selectedPos;
+		}
+		else
+		{
+			selectedPos = 0;
+			Common.activPlt = selectedPos;
+		}
+		selectItem(selectedPos);
+	}
+	public void leftClicked(View v){
+		int selectedPos = 0;
+		if( Common.activPlt > 0 )
+		{
+			selectedPos = Common.activPlt - 1;
+			Common.activPlt = selectedPos;
+		}
+		else
+		{
+			selectedPos = 6;
+			Common.activPlt = selectedPos;
+		}
+		selectItem(selectedPos);
+	}
 }
 
