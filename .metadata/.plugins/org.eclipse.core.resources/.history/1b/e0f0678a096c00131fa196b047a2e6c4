@@ -1,0 +1,209 @@
+package com.androidbegin.sidemenututorial;
+
+import android.content.Intent;
+import android.content.res.Configuration;
+import android.os.Bundle;
+import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+
+import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.view.MenuItem;
+
+public class DisplayActivity extends SherlockFragmentActivity {
+
+	// Declare Variables
+	DrawerLayout mDrawerLayout;
+	ListView mDrawerList;
+	ActionBarDrawerToggle mDrawerToggle;
+	MenuListAdapter mMenuAdapter;
+	String[] title = {"Menu", "Bebidas", "Entradas", "Pratos de Carne", "Pratos de Peixe", "Outros Pratos", "Sobremesas", "VOLTAR", "SAIR"};
+	String[] subtitle = new String[9];//{"Menu", "Bebidas", "Entradas", "Pratos de Carne", "Pratos de Peixe", "Outros Pratos", "Sobremesas", "Menu Anterior", "Fechar Aplicação"};
+	int[] icon = new int[Common.totalPlt + 2];
+	DisplayFragment fragAct = new DisplayFragment();
+	DisplayFragment fragBack = new DisplayFragment();
+	private CharSequence mDrawerTitle;
+	
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		// Get the view from drawer_main.xml
+		setContentView(R.layout.drawer_main);
+		// Get the Title
+		mDrawerTitle = getTitle();
+		
+		// Locate DrawerLayout in drawer_main.xml
+		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+		// Locate ListView in drawer_main.xml
+		mDrawerList = (ListView) findViewById(R.id.listview_drawer);
+
+		// Set a custom shadow that overlays the main content when the drawer
+		// opens
+		mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow,
+				GravityCompat.START);
+
+		// Pass string arrays to MenuListAdapter
+		mMenuAdapter = new MenuListAdapter(DisplayActivity.this, title, subtitle,
+				icon);
+
+		// Set the MenuListAdapter to the ListView
+		mDrawerList.setAdapter(mMenuAdapter);
+
+		// Capture listview menu item click
+		mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+
+		// Enable ActionBar app icon to behave as action to toggle nav drawer
+		getSupportActionBar().setHomeButtonEnabled(true);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+		// ActionBarDrawerToggle ties together the the proper interactions
+		// between the sliding drawer and the action bar app icon
+		mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
+				R.drawable.ic_drawer, R.string.drawer_open,
+				R.string.drawer_close) {
+
+			public void onDrawerClosed(View view) {
+				// TODO Auto-generated method stub
+				super.onDrawerClosed(view);
+			}
+
+			public void onDrawerOpened(View drawerView) {
+				// TODO Auto-generated method stub
+				// Set the title on the action when drawer open
+				getSupportActionBar().setTitle(mDrawerTitle);
+				super.onDrawerOpened(drawerView);
+			}
+		};
+
+		
+		mDrawerLayout.setDrawerListener(mDrawerToggle);
+
+		if (savedInstanceState == null) {
+			selectItem(Common.activPlt);
+		}
+
+		icon[0] = R.drawable.menu;
+		icon[1] = R.drawable.drink;
+		icon[2] = R.drawable.entry;  
+		icon[3] = R.drawable.meat; 
+		icon[4] = R.drawable.fish;
+		icon[5] = R.drawable.other;
+		icon[6] = R.drawable.desert;
+		icon[7] = R.drawable.undo;
+		icon[8] = R.drawable.remove;
+	}
+
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+
+		if (item.getItemId() == android.R.id.home) {
+
+			if (mDrawerLayout.isDrawerOpen(mDrawerList)) {
+				mDrawerLayout.closeDrawer(mDrawerList);
+			} else {
+				mDrawerLayout.openDrawer(mDrawerList);
+			}
+		}
+
+		return super.onOptionsItemSelected(item);
+	}
+
+	// ListView click listener in the navigation drawer
+	private class DrawerItemClickListener implements
+			ListView.OnItemClickListener {
+		@Override
+		public void onItemClick(AdapterView<?> parent, View view, int position, long id) 
+		{
+			if( position < 7)
+				selectItem(position);
+			else if( position == 7 )
+			{
+				Intent intent = new Intent(DisplayActivity.this, MainActivity.class);
+				startActivity(intent);  
+			}
+			else
+			{
+				Intent intent = new Intent(Intent.ACTION_MAIN);
+				intent.addCategory(Intent.CATEGORY_HOME);
+				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				startActivity(intent);
+			}
+		}
+	}
+
+	private void selectItem(int position) {
+
+		FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+		DisplayFragment fragAux = new DisplayFragment();
+		Common.activPlt = position;
+		
+		ft.replace(R.id.content_frame, fragBack);
+		ft.commit();
+
+		fragAux = fragBack;
+		fragBack = fragAct;
+		fragAct = fragAux;
+		
+		mDrawerList.setItemChecked(position, true);
+		Common.activPlt = position;
+		// Get the title followed by the position
+		setTitle(title[position]);
+		// Close drawer
+		
+		mDrawerLayout.closeDrawer(mDrawerList);
+	}
+
+	@Override
+	protected void onPostCreate(Bundle savedInstanceState) {
+		super.onPostCreate(savedInstanceState);
+		// Sync the toggle state after onRestoreInstanceState has occurred.
+		mDrawerToggle.syncState();
+	}
+
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+		super.onConfigurationChanged(newConfig);
+		// Pass any configuration change to the drawer toggles
+		mDrawerToggle.onConfigurationChanged(newConfig);
+	}
+
+	@Override
+	public void setTitle(CharSequence title) {
+	} 
+	
+	public void rightClicked(View v){
+		int selectedPos = 0;
+		if( Common.activPlt < 6 )
+		{
+			selectedPos = Common.activPlt + 1;
+			Common.activPlt = selectedPos;
+		}
+		else
+		{
+			selectedPos = 0;
+			Common.activPlt = selectedPos;
+		}
+		selectItem(selectedPos);
+	}
+	public void leftClicked(View v){
+		int selectedPos = 0;
+		if( Common.activPlt > 0 )
+		{
+			selectedPos = Common.activPlt - 1;
+			Common.activPlt = selectedPos;
+		}
+		else
+		{
+			selectedPos = 6;
+			Common.activPlt = selectedPos;
+		}
+		selectItem(selectedPos);
+	}
+}
+

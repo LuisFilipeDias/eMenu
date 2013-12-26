@@ -24,5 +24,6 @@ public class Common{
 	public static String email1 = "-";
 	public static String phone0 = "-";
 	public static String phone1 = "-";
+	public static String currResumee = "Sem Informações...";
 	
 }

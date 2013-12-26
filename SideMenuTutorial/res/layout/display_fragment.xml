@@ -23,7 +23,7 @@
 	        android:layout_width="match_parent"
 	        android:layout_height="380dp" >
 
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/display_ll_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -34,12 +34,27 @@
 
                 <TextView
                     android:id="@+id/bogus_ttl"
-                    android:layout_width="match_parent"
+                    android:layout_width="202dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
                     android:layout_marginTop="35dp"
+                    android:layout_alignParentLeft="true"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="@string/bogus_ttl"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/brown"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/icon_title"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="25dp"
+                    android:background="@drawable/drink"
+                    android:gravity="center_horizontal|center_vertical"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@color/brown"
                     android:textSize="30sp"
@@ -50,7 +65,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:orientation="vertical" >
+                    android:orientation="vertical"
+                    android:layout_below="@+id/bogus_ttl" >
 
                     <TextView
                         android:id="@+id/bogus_txt"
@@ -79,7 +95,7 @@
                         android:textSize="20sp"
                         android:textStyle="bold" />
                 </RelativeLayout>
-            </LinearLayout>
+            </RelativeLayout>
     	</ScrollView>
             
 	        <RelativeLayout
@@ -89,31 +105,48 @@
 	            android:layout_alignParentBottom="true"
 	            android:layout_below="@+id/display_scroll" >
                 
-	            <Button
+	            <LinearLayout
 	                android:id="@+id/right_button"
 	                android:text="@string/right_btn_txt"
                     android:textColor="@color/brown"
 	                android:textStyle="bold"
 	                android:layout_width="120dp"
-	                android:layout_height="65dp"
+	                android:layout_height="80dp"
 	                android:background="@drawable/right_tri_clicked"
 	                android:orientation="vertical"
 	                android:layout_alignParentRight="true"
+	                android:clickable="true"
 	                android:onClick="rightClicked" >
-	            </Button>
+
+                    <TextView
+                        android:id="@+id/txt_right_button"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:background="@drawable/meat_big"  />
+                	
+	            </LinearLayout>
 	            
-	            <Button
+	            <LinearLayout
 	                android:id="@+id/left_button"
 	                android:text="@string/left_btn_txt"
                     android:textColor="@color/brown"
 	                android:textStyle="bold"
 	                android:layout_width="120dp"
-	                android:layout_height="65dp"
+	                android:layout_height="80dp"
 	                android:background="@drawable/left_tri_clicked"
 	                android:orientation="vertical"
 	                android:layout_alignParentLeft="true" 
+	                android:clickable="true"
 	                android:onClick="leftClicked" >
-	            </Button>
+
+                    <TextView
+                        android:id="@+id/txt_left_button"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:background="@drawable/menu_big" />
+	            </LinearLayout>
         	</RelativeLayout>
     </RelativeLayout>
     </ScrollView>

@@ -22,7 +22,7 @@ public class DisplayActivity extends SherlockFragmentActivity {
 	ActionBarDrawerToggle mDrawerToggle;
 	MenuListAdapter mMenuAdapter;
 	String[] title = {"Menu", "Bebidas", "Entradas", "Pratos de Carne", "Pratos de Peixe", "Outros Pratos", "Sobremesas", "VOLTAR", "SAIR"};
-	String[] subtitle = {"Menu", "Bebidas", "Entradas", "Pratos de Carne", "Pratos de Peixe", "Outros Pratos", "Sobremesas", "Menu Anterior", "Fechar Aplicação"};
+	String[] subtitle = {"", "", "", "", "", "", "", "Menu Anterior", "Fechar Aplicação"};
 	int[] icon = new int[Common.totalPlt + 2];
 	DisplayFragment fragAct = new DisplayFragment();
 	DisplayFragment fragBack = new DisplayFragment();

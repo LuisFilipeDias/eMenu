@@ -1,0 +1,7 @@
+package com.androidbegin.sidemenututorial;
+
+import android.database.sqlite.SQLiteOpenHelper;
+
+ 
+public class DBhelper extends SQLiteOpenHelper{
+}

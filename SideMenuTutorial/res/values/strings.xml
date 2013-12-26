@@ -29,13 +29,13 @@
     <string name="carte_ttl">Ementas</string>
     <string name="info_ttl">Informações</string>
         
-    <string name="resumee_ttl">Resumo:</string>
-    <string name="resumee_txt">.    Não definido    </string>
-    <string name="website_ttl">Website:</string>
-    <string name="website_txt">.    Não definido    </string>
-    <string name="location_ttl">Localização:</string>
-    <string name="location_txt">.    Não definido    </string>
-    <string name="contacts_ttl">Contactos:</string>
+    <string name="resumee_ttl">Resumo</string>
+    <string name="resumee_txt">Não definido    </string>
+    <string name="website_ttl">Website</string>
+    <string name="website_txt">Não definido    </string>
+    <string name="location_ttl">Localização</string>
+    <string name="location_txt">Não definido    </string>
+    <string name="contacts_ttl">Contactos</string>
     <string name="phone_txt">- Telefones -</string>
     <string name="email_txt">- Emails -</string>
     

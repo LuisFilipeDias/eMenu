@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.PopupMenu;
+import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.MenuItem;
@@ -207,11 +208,21 @@ public class MainActivity extends SherlockFragmentActivity {
 	} 
 
 
+	public void resumeeClicked(View v){
+		createDialog(this, "Resumo", Common.currResumee, 4, "");
+	}
+
 	public void websiteClicked(View v){	
-		createDialog(this, "Website", "Deseja abrir o site do restaurante?", 0, "");
+		if( Common.currWebsite.length() > 2)
+			createDialog(this, "Website", "Deseja abrir o website? \n\n - "+ Common.currWebsite, 0, "");
+		else 
+			Toast.makeText(MainActivity.this, "Website não disponível...", Toast.LENGTH_LONG).show();
 	}
 	public void locationClicked(View v){	
-		createDialog(this, "Localização", "Deseja abrir a localização?", 1, "");
+		if( Common.currLocation.length() > 2)
+			createDialog(this, "Localização", "Deseja abrir a localização? \n\n - " + Common.currLocation, 1, "");
+		else
+			Toast.makeText(MainActivity.this, "Localização não disponível...", Toast.LENGTH_LONG).show();
 	}
 	
 	public void emailClicked(View v){
@@ -319,8 +330,6 @@ public class MainActivity extends SherlockFragmentActivity {
 					if( sel == 0)
 					{
 						String url = "http://" + Common.currWebsite;
-						//String url = Common.currWebsite;
-						//System.out.println(url2);
 						System.out.println(url);
 				        intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 				        startActivity(intent);

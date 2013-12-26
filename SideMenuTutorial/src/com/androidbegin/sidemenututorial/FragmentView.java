@@ -28,11 +28,6 @@ public class FragmentView extends SherlockFragment{
 		Iterator it = Common.users.iterator();
 		Users p = null;
         TextView title_tv = (TextView)  v.findViewById(R.id.info_ttl);
-        TextView resumee_tv = (TextView)  v.findViewById(R.id.resumee_txt);
-        TextView website_tv = (TextView)  v.findViewById(R.id.website_txt);
-        TextView location_tv = (TextView)  v.findViewById(R.id.location_txt);
-        TextView phone_tv = (TextView)  v.findViewById(R.id.phone_txt);
-        TextView email_tv = (TextView)  v.findViewById(R.id.email_txt);
         
         for (int i = 0; i <= Common.activRst; i++) 
 	    {
@@ -47,30 +42,15 @@ public class FragmentView extends SherlockFragment{
 	    if(p.getRestaurant().length() != 0)
 	       	title_tv.setText("    " + p.getRestaurant() + "    ");
         if(p.getResumee().length() != 0)
-        	resumee_tv.setText("    " + p.getResumee() + "    ");
-	    else
-	    {
-	    	resumee_tv.setText("    Sem resumo de restaurante    ");
-	    }
-	    if(p.getWebsite().length() != 0)
-	    {
+        {
+        	Common.currResumee = p.getResumee();
+        	//System.out.println(p.getResumee());
+        	//System.out.println(Common.currResumee);
+        }
+        if(p.getWebsite().length() != 0)
 	    	Common.currWebsite = p.getWebsite();
-	      	website_tv.setText("    " + p.getWebsite() + "    ");
-	    }
-	    else
-	    {
-	    	website_tv.setText("    Sem informação    ");
-	    }
 	    if(p.getCountry().length() != 0 || p.getCity().length() != 0)
-	    {
 	    	Common.currLocation = p.getStreet() + ", " + p.getCity() + " - " + p.getCountry();
-	       	location_tv.setText("    " + Common.currLocation + "    ");
-	    }
-	    else
-	    {
-	    	location_tv.setText("    Sem informação    ");
-	    }
-		
 	}
 
 	/*@Override

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    
+    <string name="drawer_close">drawer_close</string>
+    <string name="drawer_open">drawer_open</string>
+    <string name="title_activity_fetch_database">title_activity_fetch_database</string>
+    <string name="title_activity_main">Escolher Restaurante</string>
+    <string name="title_activity_display">Escolher Opção</string>
+    <string name="title_activity_menu">Restaurantes</string>
+    <string name="title_display_activity">Escolher</string>
+    <string name="action_settings">action_settings</string>
+    <string name="Fragment1">Fragment1</string>
+    <string name="Fragment2">Fragment2</string>
+    <string name="Fragment3">Fragment3</string>
+    <string name="hello_world">Hello</string>
+    <string name="Fragment1">Fragment1</string>
+    <string name="menu_settings">Definições</string>
+    
+    <string name="menu_txt">Menus</string>
+    <string name="entry_txt">Entradas</string>
+    <string name="meat_txt">Pratos de Carne</string>
+    <string name="fish_txt">Pratos de peixe</string>
+    <string name="others_txt">Outros Pratos</string>
+    <string name="deserts_txt">Sobremesas</string>
+    <string name="drinks_txt">Bebidas</string>
+    
+    <string name="app_name">eMenu</string>
+    <string name="carte_ttl">Ementas</string>
+    <string name="info_ttl">Informações</string>
+        
+    <string name="resumee_ttl">Resumo</string>
+    <string name="resumee_txt">.    Não definido    </string>
+    <string name="website_ttl">Website</string>
+    <string name="website_txt">.    Não definido    </string>
+    <string name="location_ttl">Localização</string>
+    <string name="location_txt">.    Não definido    </string>
+    <string name="contacts_ttl">Contactos:</string>
+    <string name="phone_txt">- Telefones -</string>
+    <string name="email_txt">- Emails -</string>
+    
+    <string name="bogus_ttl">Opção</string>
+    <string name="bogus_txt"> - Não disponível...\n\n</string>
+    <string name="bogus_price"> </string>
+    
+    <string name="left_btn_txt">Left</string>
+    <string name="right_btn_txt">Right</string>
+</resources>

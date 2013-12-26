@@ -21,7 +21,7 @@ public class FetchDatabase{
             HttpClient httpclient; 
             httpclient = new DefaultHttpClient();
             httppost = new HttpPost(
-                    "http://emenu-box.com/eMenu/GetData.php"); // change this to your URL.....
+                    "http://emenu-box.com/eMenu/GetData.php");
             ResponseHandler<String> responseHandler = new BasicResponseHandler();
             final String response = httpclient.execute(httppost,
                     responseHandler);
@@ -35,12 +35,11 @@ public class FetchDatabase{
             return "error";
         }
     }
-	public static ArrayList<Users> parseJSON(String result) 
+	public static ArrayList<Users> parseJSON(JSONArray jArray) 
 	{
 	    ArrayList<Users> users = new ArrayList<Users>();
 	    try 
 	    {   
-	        JSONArray jArray = new JSONArray(result);
 	        for (int i = 0; i < jArray.length(); i++) 
 	        {
 	            JSONObject json_data = jArray.getJSONObject(i);
@@ -58,6 +57,7 @@ public class FetchDatabase{
         						json_data.getString("phone_2"));
 	            user.setWebsite(json_data.getString("website"));
 	            user.setResumee(json_data.getString("resumee"));
+	            System.out.println("Resumee: " + json_data.getString("resumee"));
 	            user.setMenus(	json_data.getString("menu_0"), 
 	            				json_data.getString("menu_1"), 
 	            				json_data.getString("menu_2"), 
