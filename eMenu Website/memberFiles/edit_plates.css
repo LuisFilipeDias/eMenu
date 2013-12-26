@@ -1,0 +1,27 @@
+
+
+#title_profile{
+	margin-left:50px;
+	margin-top:50px;
+	font-size:25px;
+	color:#1A0000;
+}
+
+#plate_title{
+	text-align:left;
+	color:#1A0000;
+	font-size:15px;
+	font-weight: bold;
+}
+
+#plate_input{
+	background-color: transparent; 
+	border-style: solid; 
+	border-width: 0px 0px 1px 0px; 
+	border-color: #1A0000;
+	margin-left:150px;
+	width:500px;
+	text-align:center;
+}
+
+

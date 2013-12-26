@@ -1,0 +1,109 @@
+
+
+#title_profile{
+	margin-left:50px;
+	margin-top:50px;
+	font-size:25px;
+	color:#1A0000;
+}
+
+#title_profile a{
+	margin-left:50px;
+	margin-top:50px;
+	font-size:25px;
+	color:#1A0000;
+	text-decoration:none;
+}
+
+#title_profile a:visited{
+	margin-left:50px;
+	margin-top:50px;
+	font-size:25px;
+	color:#1A0000;
+	text-decoration:none;
+}
+
+#title_profile a:hover{
+	margin-left:50px;
+	margin-top:50px;
+	font-size:25px;
+	color:#AA0000;
+	text-decoration:none;
+}
+
+
+
+#plate_title{
+	text-align:left;
+	color:#1A0000;
+	font-size:15px;
+	font-weight: bold;
+}
+
+#plate_title a{
+	text-align:left;
+	color:#1A0000;
+	font-size:15px;
+	font-weight: bold;
+}
+
+
+#plate_title a{
+	text-align:left;
+	color:#1A0000;
+	font-size:15px;
+	font-weight: normal;
+	text-decoration:none;
+}
+
+#plate_title a:visited{
+	text-align:left;
+	color:#1A0000;
+	font-size:15px;
+	font-weight: normal;
+	text-decoration:none;
+}
+
+#plate_title a:hover{
+	text-align:left;
+	color:#AA0000;
+	font-size:15px;
+	font-weight: normal;
+	text-decoration:none;
+}
+
+
+
+#plate_input{
+	background-color: transparent; 
+	border-style: solid; 
+	border-width: 0px 0px 1px 0px; 
+	border-color: #1A0000;
+	margin-left:100px;
+	width:450px;
+	text-align:center;
+	float: left;
+}
+
+
+#plate_price{
+	background-color: transparent; 
+	border-style: solid; 
+	border-width: 0px 0px 1px 0px; 
+	border-color: #1A0000;
+	margin-left:50px;
+	width:30px;
+	font-weight:bold;
+	text-align:center;
+	float: left;
+}
+
+#simple_links a, #simple_links a:visited{
+	color:#AA0000;
+	text-decoration:none;
+}
+
+#simple_links a:hover{
+	color:#1A0000;
+	text-decoration:none;
+}

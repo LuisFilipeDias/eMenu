@@ -1,0 +1,242 @@
+/*************** Generals *********************************************/
+
+body{
+    font-family: "Trebuchet MS";
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    font-size:14px;
+	margin:0px;
+	padding:0px;
+	color: black;
+	background:white;
+	background:url("../img/back_2.jpg") repeat;
+	background:url("../img/wood.png") repeat;
+}
+
+#divh1 { 
+	margin:15px 15px 30px 15px;
+	text-align:center;
+	font-weight:normal; 
+	font-size:38px;	
+}
+
+#divh2 a, #divh1 a{
+	color:white;
+	text-decoration:  none;	
+}
+
+#divh2 a:hover, #divh1 a:hover{
+	color:#AA0000;
+}
+
+
+#divh2 { 
+	text-align:center;
+	font-weight:normal; 
+	font-size:28px;	
+}
+.divh3 { 
+	margin-top:50px;
+	margin-bottom:50px;
+	text-indent:15%;
+	font-weight:normal;
+	font-size:28px;
+	color:#AA0000;
+	text-shadow: 1px 1px #000011;
+}
+.divh3:hover{
+	color:#DF7401;
+}
+#top_header{
+	min-width: 1050px;
+	text-indent:100px;
+	color:black;
+	height:270px;	
+	background-image: -moz-linear-gradient(bottom, black , #400000  50%, black);
+	background-image: -webkit-linear-gradient(bottom, black , #400000  50%, black);
+	background:url("../img/wood2b.png") repeat;
+}
+#top_group{
+	margin-top:60px;
+	color: white;
+	float:left;
+}
+
+#imgwrapper{
+	height:100%;
+}
+
+#imgwrapper img{
+	margin-left:7%;
+	margin-top:60px;
+	border-radius:15px;
+	height:65%;
+}
+
+#top_menu{
+	min-width:900px;
+	margin:10px 50px 40px 50px;
+	border-radius:5px;
+	background: #202020 ;
+}
+
+#top_menu li{
+	color: #CC6600;
+	border-left: 1px solid #A0A0A0;
+	border-right: 1px solid #A0A0A0;
+	border-radius:5px;
+	font-weight:normal;
+	font-size:16px;
+   	display:inline-block;
+   	list-style:none;
+   	margin-right:50px; /*space between links*/
+   	padding:4px 20px 4px 20px;
+}
+
+#top_menu li:hover{
+	border-left: 1px dashed white;
+	border-right: 1px dashed white;
+}
+
+#top_menu a{
+	text-decoration:  none;	
+	color: #A0A0A0 ;
+}
+
+#top_menu a:visited{
+	color: #A0A0A0 ;
+}
+#top_menu a:hover{
+	color: white;
+	text-shadow: 0px 0px 10px white;
+}
+
+
+#main_section{
+	border:1px solid green;
+}
+
+#left_section{
+	weight: 75%; 
+	min-width:900px;
+	display: table-cell;
+}
+
+#right_section{
+  	position: relative; 
+	weight: 25%;
+	display: table-cell;
+	min-width:300px;
+}
+
+#side_section{
+  	position: fixed; 
+	margin:0px 10px 0px 0px;
+	padding:5px;
+	border-radius: 3px;
+	border: 1px solid grey;
+	box-shadow: rgba(80,80,250,0.5) 0 0 1px 1px;
+	box-shadow: inset 0 10px rgba(255, 255, 255, 0.4), inset 0 150px rgba(255, 255, 255, 0.3), 
+	inset 0 40px rgba(255, 255, 255, 0.3), inset 0 10px 20px rgba(255, 255, 255, 0.35), inset 0 -10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.footer_sig{
+	font-size:20px;
+	margin:18px;
+}
+
+.footer_sig a{
+	text-decoration:  none;	
+	color:#AA0000;
+}
+
+.footer_sig a:visited{
+	text-decoration:  none;	
+	color:#AA0000;
+}
+
+.footer_sig a:hover{
+	color:#DF7401;
+}
+
+#the_footer{
+   clear:both;
+   text-align:center;
+   padding:30px;
+   border-top: 2px dotted white;
+   color: white;
+   float: bottom;
+   background: #202020;
+}
+
+#side_section a{
+	text-decoration:none;
+	font-weight:normal;
+	font-size:14px;
+	color: black;
+	text-shadow: 0.5px 0.5px #AA0000;
+}
+
+#side_section a:visited{
+	color:black;
+}
+
+#side_section a:hover{
+	color:#DF7401;
+}
+
+#side_menu{
+	min-width:100px;
+	background: #202020 ;
+	border-radius:2px;
+}
+
+#side_menu p{
+	margin:0px 50px 0px 50px;
+	text-align:center;
+	color: #A0A0A0 ;
+	border-radius:5px;
+   	padding:4px 20px 4px 20px;
+	border-left: 1px solid #A0A0A0;
+	border-right: 1px solid #A0A0A0;
+}
+
+
+#side_menu a{
+	font-size:16px;
+	font-weight:normal;
+	text-shadow: 0px 0px #A0A0A0 ;
+	text-decoration:  none;	
+	color: #A0A0A0 ;
+}
+
+#side_menu a:visited{
+	text-shadow: 0px 0px #A0A0A0 ;
+	color: #A0A0A0 ;
+}
+#side_menu a:hover{
+	text-shadow: 0px 0px 10px white;
+	color: white;
+}
+
+#side_menu p:hover{
+	border-left: 1px dashed white;
+	border-right: 1px dashed white;
+}
+
+.yearSep
+{
+	border-bottom: 1px solid #A0A0A0;
+}
+
+
+#transparent_box{
+	margin:0px 100px 60px 100px;
+	padding:5px;
+	text-align:justify;
+	border-radius: 10px;
+	border: 1px solid grey;
+	background: rgba(0, 0, 0, 0.1);
+	box-shadow: inset 0 10px rgba(255, 255, 255, 0.4), inset 0 150px rgba(255, 255, 255, 0.3), 
+	inset 0 40px rgba(255, 255, 255, 0.3), inset 0 10px 20px rgba(255, 255, 255, 0.35), inset 0 -10px 10px rgba(0, 0, 0, 0.3);
+	
+}
